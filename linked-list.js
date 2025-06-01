@@ -28,9 +28,33 @@ class LinkedList {
   }
 
   prepend(value) {
-    const newNode = new Node(value);
-    newNode.nextNode = this.head; 
-    this.head = newNode;          
+    const newNode = new Node(value)
+    newNode.nextNode = this.head
+    this.head = newNode         
+  }
+
+  size() {
+    let count = 0
+    let current = this.head
+    while (current !== null) {
+      count++
+      current = current.nextNode
+    }
+    return count
+  }
+
+  headNode() {
+    return this.head
+  }
+
+  tail() {
+    let current = this.head
+    if (current === null) return null
+
+    while (current.nextNode !== null) {
+      current = current.nextNode
+    }
+    return current
   }
 
 }
