@@ -103,3 +103,5 @@ class LinkedList {
     return result
   }
 }
+
+module.exports = LinkedList
