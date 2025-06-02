@@ -30,7 +30,7 @@ class LinkedList {
   prepend(value) {
     const newNode = new Node(value)
     newNode.nextNode = this.head
-    this.head = newNode         
+    this.head = newNode
   }
 
   size() {
@@ -57,4 +57,19 @@ class LinkedList {
     return current
   }
 
+  at(index) {
+    if (index < 0) return null
+
+    let current = this.head
+    let count = 0
+
+    while (current !== null) {
+      if (count === index) return current
+      current = current.nextNode
+      count++
+    }
+
+    // if index not exist
+    return null
+  }
 }
