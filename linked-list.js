@@ -72,4 +72,21 @@ class LinkedList {
     // if index not exist
     return null
   }
+
+  pop() {
+    if (this.head === null) return // check if list is empty
+
+    if (this.head.nextNode === null) {
+      // if there is only one value
+      this.head = null
+      return
+    }
+
+    let current = this.head
+    while (current.nextNode.nextNode !== null) {
+      current = current.nextNode
+    }
+
+    current.nextNode = null // pop
+  }
 }
