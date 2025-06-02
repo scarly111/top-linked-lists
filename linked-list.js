@@ -89,4 +89,17 @@ class LinkedList {
 
     current.nextNode = null // pop
   }
+
+  toString() {
+    let current = this.head
+    let result = ''
+
+    while (current !== null) {
+      result += `( ${current.value} ) -> `
+      current = current.nextNode
+    }
+
+    result += 'null'
+    return result
+  }
 }
